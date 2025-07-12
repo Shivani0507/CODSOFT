@@ -1,0 +1,159 @@
+/* Reset box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #a3d5ff, #1e3c72);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  padding: 40px 0;
+  color: white;
+}
+
+.calculator-container {
+  width: 400px;
+  background: #0f2c56;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+/* Combined Display Section */
+.display-section {
+  background: #1a3d7c;
+  border-radius: 14px;
+  padding: 6px 12px;     /* further reduced padding */
+  color: #a6c8ff;
+  user-select: text;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: nowrap;
+  min-height: 45px;      /* smaller height */
+}
+
+.expression {
+  font-size: 0.9rem;     /* smaller font */
+  font-weight: 600;
+  margin-bottom: 2px;    /* tighter spacing */
+  color: #c7d9ff;
+}
+
+.result {
+  font-size: 1.1rem;     /* smaller font */
+  font-weight: 700;
+  color: #f0f9ff;
+  border-top: 1.5px solid #3b5bbf;
+  padding-top: 4px;      /* reduced padding */
+  user-select: none;
+}
+
+
+/* Buttons Grid */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.btn {
+  background-color: #2980b9;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  user-select: none;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s ease;
+  padding: 0;
+}
+
+.btn:hover {
+  background-color: #3498db;
+}
+
+.equal {
+  background-color: #00bfff;
+}
+
+.equal:hover {
+  background-color: #33c4ff;
+}
+
+/* Empty buttons placeholders to keep grid symmetry */
+.btn:empty {
+  background: transparent;
+  cursor: default;
+  pointer-events: none;
+}
+  
+/* History Section */
+.history-section {
+  background-color: #143d70;
+  border-radius: 12px;
+  padding: 10px 15px;          /* reduced padding */
+  border: 1px solid #2c4f91;
+  color: #99c9ff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                    /* less gap */
+  max-height: 180px;           /* optional max height */
+  overflow: hidden;            /* contain overflowing content */
+}
+
+.history-section h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;             /* smaller font */
+}
+
+#clear-history-btn {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 5px 12px;           /* smaller padding */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;           /* smaller font */
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+#clear-history-btn:hover {
+  background-color: #1c5d9f;
+}
+
+#history-list {
+  list-style: none;
+  max-height: 120px;           /* reduced height */
+  overflow-y: auto;
+  padding-left: 0;
+  font-size: 0.85rem;          /* smaller font */
+  border-top: 1px solid #2c4f91;
+  margin-top: 0;
+  color: #cde3ff;
+}
+
+#history-list li {
+  padding: 4px 0;              /* less padding */
+  border-bottom: 1px solid #2c4f91;
+}
